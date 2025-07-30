@@ -6,7 +6,7 @@
 class Fixed {
     public:
         Fixed();
-        Fixed(int nb);
+        Fixed(const Fixed& copy);
         Fixed& operator=(const Fixed &other);
         ~Fixed();
         int getRawBits(void) const;
