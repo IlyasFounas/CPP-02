@@ -1,5 +1,12 @@
 #include "Fixed.hpp"
 
+std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
+	// std::cout << "THERE" << std::endl;
+    float value = obj.toFloat();
+    os << value;
+    return os;
+}
+
 int	main(void)
 {
 	Fixed	a;
