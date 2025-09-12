@@ -1,8 +1,8 @@
 NAME = fixed
 
 INCLUDES = includes
-SRC = srcs/class/Fixed.cpp \
-	  srcs/main.cpp
+SRC = Fixed.cpp \
+	  main.cpp
 
 CXX = c++
 
