@@ -11,15 +11,20 @@ class Fixed {
         Fixed(const int nb);
         Fixed(const float nb);
         Fixed(const Fixed& copy);
-        friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
-        Fixed& operator=(const Fixed &other);
         ~Fixed();
+        Fixed& operator=(const Fixed &other);
+
+        /*_____public_members_____*/
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
         float toFloat(void) const;
         int toInt(void) const;
-    
+        
     private:
         int fixed;
         static const int fixed_bits = 8;
-};
+    };
+    
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
 #endif
