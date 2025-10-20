@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 
+/*_____constructors_____*/
 Fixed::Fixed() : fixed(0)
 {
 }
@@ -23,20 +24,7 @@ Fixed::~Fixed()
 {
 }
 
-/*---------- methods --*/
-
-float Fixed::toFloat(void) const
-{
-	return ((float)this->fixed / (1 << this->fixed_bits));
-}
-
-int Fixed::toInt(void) const
-{
-	return (this->fixed >> this->fixed_bits);
-}
-
-/*---------- overloading --*/
-
+/*_____overloading_____*/
 Fixed &Fixed::operator=(const Fixed &other)
 {
 	if (&other != this)
@@ -122,6 +110,29 @@ bool Fixed::operator==(const Fixed &other) const
 bool Fixed::operator!=(const Fixed &other) const
 {
 	return (this->fixed != other.fixed);
+}
+
+/*_____public_members_____*/
+int Fixed::getRawBits(void) const
+{
+    std::cout << "getRawBits member function called" << std::endl;
+    return (this->fixed);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+    std::cout << "setRawBits member function called" << std::endl;
+    this->fixed = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+	return ((float)this->fixed / (1 << this->fixed_bits));
+}
+
+int Fixed::toInt(void) const
+{
+	return (this->fixed >> this->fixed_bits);
 }
 
 Fixed &Fixed::min(Fixed &left, Fixed &right)

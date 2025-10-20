@@ -36,6 +36,8 @@ Fixed& Fixed::operator=(const Fixed &other)
     return *this;
 }
 
+/*_____public_members_____*/
+
 int Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called" << std::endl;

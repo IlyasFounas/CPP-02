@@ -7,38 +7,37 @@
 
 class Fixed {
     public:
+
+        /*_____constructors_____*/
         Fixed();
         Fixed(const int nb);
         Fixed(const float nb);
         Fixed(const Fixed& copy);
         ~Fixed();
 
-        /*---------- methods --*/
-        float toFloat(void) const;
-        int toInt(void) const;
-        
-        /*---------- overloading --*/
+        /*_____overloading_____*/
         friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
         Fixed& operator=(const Fixed &other);
-
-
         Fixed operator+(const Fixed &other);
         Fixed operator-(const Fixed &other);
         Fixed operator*(const Fixed &other);
         Fixed operator/(const Fixed &other);
-        
-        Fixed& operator++();    // ++a
-        Fixed operator++(int);  // a++
-        Fixed& operator--();    // --a
-        Fixed operator--(int);  // a--
-
+        Fixed& operator++();
+        Fixed operator++(int);
+        Fixed& operator--();
+        Fixed operator--(int);
         bool operator>(const Fixed &other) const;
         bool operator<(const Fixed &other) const;
         bool operator>=(const Fixed &other) const;
         bool operator<=(const Fixed &other) const;
         bool operator==(const Fixed &other) const;
         bool operator!=(const Fixed &other) const;
-
+        
+        /*_____public_members_____*/
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+        float toFloat(void) const;
+        int toInt(void) const;
         static Fixed& min(Fixed &left, Fixed &right);
         static const Fixed& min(const Fixed &left, const Fixed &right);
         static Fixed& max(Fixed &left, Fixed &right);
