@@ -16,7 +16,6 @@ class Fixed {
         ~Fixed();
 
         /*_____overloading_____*/
-        friend std::ostream& operator<<(std::ostream& os, const Fixed& obj);
         Fixed& operator=(const Fixed &other);
         Fixed operator+(const Fixed &other);
         Fixed operator-(const Fixed &other);
@@ -49,5 +48,7 @@ class Fixed {
         int fixed;
         static const int fixed_bits = 8;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
 
 #endif
