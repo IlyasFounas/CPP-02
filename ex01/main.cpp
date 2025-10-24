@@ -8,7 +8,7 @@ std::ostream& operator<<(std::ostream& os, const Fixed& obj) {
 int	main(void)
 {
 	Fixed	a = Fixed(1234.4321f);
-	Fixed const b(10);
+	Fixed const b(1.0f);
 	Fixed const c(42.42f);
 	Fixed const d(b);
 

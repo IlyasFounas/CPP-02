@@ -28,8 +28,17 @@ int	main(void)
 	Fixed tests;
 
 	tests = Fixed(15.256f);
-	tests = tests / b;
+	tests = tests / Fixed(2);
 	std::cout << "tests : " << std::endl << "tests is equal : " << tests << std::endl;
+	std::cout << tests-- << std::endl;
+	std::cout << --tests << std::endl;
+	tests = b;
+	if (tests == b)
+		std::cout << "tests and b are equal" << std::endl;
+	else if (tests > b)
+		std::cout << "tests is bigger than b" << std::endl;
+	else
+		std::cout << "b is bigger than tests" << std::endl;
 	std::cout << "the min between a and tests is " << Fixed::min(a,tests) << std::endl;
 	return (0);
 }
